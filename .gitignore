@@ -1,3 +1,8 @@
+# Ignore everything without a extension
+*
+!*/
+!*.*
+
 # Prerequisites
 *.d
 
@@ -30,3 +35,6 @@
 *.exe
 *.out
 *.app
+
+# Concrete ignores
+.DS_Store
