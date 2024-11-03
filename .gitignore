@@ -38,3 +38,4 @@
 
 # Concrete ignores
 .DS_Store
+.vscode/settings.json
