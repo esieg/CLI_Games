@@ -25,7 +25,6 @@ private:
 
     // define the game variables
     int status = RUNNING;
-    bool replay = false; 
     int test = 10;  // only for testing stuff
     std::mutex mtx;
 
@@ -133,6 +132,7 @@ private:
             setFrontColor(CYAN);
             std::cout << "Current test: " << test << std::endl;
             setDefaultFrontColor();
+            std::cout << std::flush; // Needed for a stable drawing
         }
     }
 
@@ -176,6 +176,8 @@ private:
     }
 
 public:
+    bool replay = false; 
+
     // Konstruktor
     GAME() {
         init();
@@ -184,6 +186,11 @@ public:
 
 // TESTAREA
 int main() {
-    GAME game;
+    bool replay = false;
+
+    do {
+        GAME game;
+        replay = game.replay;
+    } while (replay);
     return 0;
 }
